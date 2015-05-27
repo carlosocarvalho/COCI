@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Coci by carlosocarvalho</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Coci</h1>
+        <p class="header">PHP Simple Injection, use classe in project.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/carlosocarvalho/COCI/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/carlosocarvalho/COCI/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/carlosocarvalho/COCI">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/carlosocarvalho">carlosocarvalho</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="coci" class="anchor" href="#coci" aria-hidden="true"><span class="octicon octicon-link"></span></a>COCI</h1>
+
+<p>PHP Simple Injection, use classe in project.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p><strong>Composer install</strong></p>
+
+<pre><code>  {
+     "require":"carlosocarvalho/coci": "1.0.0"
+  }
+</code></pre>
+
+<h2>
+<a id="example-use" class="anchor" href="#example-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example use</h2>
+
+<pre><code>&lt;?php
+
+  require "vendor/autoload.php";
+
+  use COC\COCI\Injection;
+  $inj = new Injection;
+</code></pre>
+
+<p><strong>Create Classes Injections with Agregration (Person)</strong>  </p>
+
+<pre><code>  Class Person(){
+     private $person ;
+    class function __construct(TypePerson $typePerson){
+           $this-&gt;person = $typePerson;
+     }   
+
+  }
+</code></pre>
+
+<p><strong>Create Classes Injections(TypePerson)</strong></p>
+
+<pre><code>  &lt;?php    
+  Class TypePerson(){
+    private $type;
+    setType($type){
+      $this-&gt;type;
+    }
+    getType(){
+      return $this-&gt;type;
+    }
+  }
+</code></pre>
+
+<p><strong>Inject Classes Closure</strong></p>
+
+<pre><code> &lt;?php 
+   $inj-&gt;set('TypePerson',function(){
+      return new TypePerson();
+   })
+
+  $inj-&gt;set('Person',function() use ($inj){
+     return new Person($inj-&gt;get('TypePerson'));
+   });
+</code></pre>
+
+<p><strong>Inject Classes By Reflection</strong></p>
+
+<pre><code> &lt;?php 
+
+   $inj-&gt;get('TypePerson');
+</code></pre>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
