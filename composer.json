@@ -1,0 +1,19 @@
+{
+    "name": "carlosocarvalho/coci",
+    "description": "php simple injection",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Carlos Carvalho",
+            "email": "contato@carlosocarvalho.com.br"
+        }
+    ],
+    "require": {
+      "php":">= 5.4"
+    },
+  "autoload":{
+    "psr-4":{
+      "COC\\COCI\\":"COC"
+    }
+  }
+}
