@@ -1,6 +1,6 @@
 # COCI
 PHP Simple Injection, use classe in project.
-
+[![Build Status](https://travis-ci.org/carlosocarvalho/COCI.svg?branch=master)](https://travis-ci.org/carlosocarvalho/COCI)
 [![Latest Stable Version](https://poser.pugx.org/carlosocarvalho/coci/v/stable)](https://packagist.org/packages/carlosocarvalho/coci) [![Total Downloads](https://poser.pugx.org/carlosocarvalho/coci/downloads)](https://packagist.org/packages/carlosocarvalho/coci) [![Latest Unstable Version](https://poser.pugx.org/carlosocarvalho/coci/v/unstable)](https://packagist.org/packages/carlosocarvalho/coci) [![License](https://poser.pugx.org/carlosocarvalho/coci/license)](https://packagist.org/packages/carlosocarvalho/coci)
 
 ##Install
