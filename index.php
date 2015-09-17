@@ -14,9 +14,11 @@ class Foo{
 
 
 class Bar{
+    public $entity;
+    function __construct(Foo $entity){
 
-    function __construct(Foo $obj){
-
+    	$this->entity = $entity;
+     
     }
 }
 
@@ -24,6 +26,6 @@ class Bar{
 
 $coci = new Injection();
 
+$bar =  $coci->get('Bar');
 
-var_dump($coci->get('Bar'));
 
